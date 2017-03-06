@@ -24,15 +24,16 @@ export class RegisterFormComponent implements OnInit {
 
   onSignupSubmit(){
     this.tokenAuthService.registerAccount(this.signUpUser).subscribe(
-        (res) => {
+        res => {
+          console.log("signedup");
           if (res.status == 200){
             this.onFormResult.emit({signedUp: true, res});
           }
 
         },
 
-        (err) => {
-          console.log(err.json());
+        err => {
+          console.log('err:', err);
           this.onFormResult.emit({signedUp: false, err});
         }
       );

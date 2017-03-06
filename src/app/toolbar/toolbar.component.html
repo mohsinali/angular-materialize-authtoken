@@ -11,7 +11,7 @@
         <li *ngIf="!tokenAuthService.userSignedIn()"> <a (click)="presentAuthDialog('register')">REGISTER</a></li>
 
         <li *ngIf="tokenAuthService.userSignedIn()"> <a [routerLink]="['/profile']" >PROFILE</a></li>
-        <li *ngIf="tokenAuthService.userSignedIn()"> <a >LOGOUT</a></li>
+        <li *ngIf="tokenAuthService.userSignedIn()"> <a (click)="tokenAuthService.signOut()" >LOGOUT</a></li>
 
       </ul>
 
